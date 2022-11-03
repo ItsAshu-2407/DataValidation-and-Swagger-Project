@@ -16,11 +16,11 @@ public class studentExceptionHandler{
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(MethodArgumentNotValidException.class)
    
-	public Map<String,String> handleException(MethodArgumentNotValidException ex) {
+	public Map<String,String> handleException(MethodArgumentNotValidException ec) {
 		
 		Map<String,String> errorMap=new HashMap<>();
 		
-		ex.getBindingResult().getFieldErrors().forEach(error->{
+		ec.getBindingResult().getFieldErrors().forEach(error->{
 			errorMap.put(error.getField(), error.getDefaultMessage());
 		});
 	
@@ -29,11 +29,11 @@ public class studentExceptionHandler{
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 	@ExceptionHandler(GlobalException.class)
 
-	public Map<String,String> handleGlobalException(GlobalException gex){
+	public Map<String,String> handleGlobalException(GlobalException ge){
 		
 		Map<String,String> errorMap=new HashMap<>();
 	
-		errorMap.put("Exception ",gex.getMessage());
+		errorMap.put("Exception ",ge.getMessage());
 			
 		return errorMap;
 	}

@@ -4,11 +4,10 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import com.student.advice.GlobalException;
+import com.student.GlobalException.GlobalException;
 import com.student.dto.studentDTO;
 import com.student.model.studentModel;
 import com.student.service.studentService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
